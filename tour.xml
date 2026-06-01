@@ -62,15 +62,7 @@
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-	
 
-	
 	<scene name="scene_IMG_20260528_152253_00_028" title="IMG_20260528_152253_00_028" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
@@ -87,41 +79,7 @@
 			<cube url="panos/IMG_20260528_152253_00_028.tiles/vr/pano_%s.jpg" />
 		</image>
 
-	</scene>
-
-	<scene name="scene_IMG_20260528_152610_00_029" title="IMG_20260528_152610_00_029" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152610_00_029.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="74.00" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/IMG_20260528_152610_00_029.tiles/preview.jpg" />
-
-		<image if="!(webvr.isenabled OR device.mobilevr)">
-			<cube url="panos/IMG_20260528_152610_00_029.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
-		</image>
-
-		<image if="webvr.isenabled OR device.mobilevr">
-			<cube url="panos/IMG_20260528_152610_00_029.tiles/vr/pano_%s.jpg" />
-		</image>
-
-	</scene>
-
-	<scene name="scene_IMG_20260528_152800_00_030" title="IMG_20260528_152800_00_030" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/IMG_20260528_152800_00_030.tiles/preview.jpg" />
-
-		<image if="!(webvr.isenabled OR device.mobilevr)">
-			<cube url="panos/IMG_20260528_152800_00_030.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
-		</image>
-
-		<image if="webvr.isenabled OR device.mobilevr">
-			<cube url="panos/IMG_20260528_152800_00_030.tiles/vr/pano_%s.jpg" />
-		</image>
+		<hotspot name="spot2" url="images/pisada.png" style="skin_hotspotstyle" scale="1" ath="-91.52" atv="-0.18" linkedscene="Pasillo_1" use3dtransition="true" hlookat="44.9961938" vlookat="3.8733444" fovtype="MFOV" fov="90" />
 
 	</scene>
 
@@ -157,6 +115,25 @@
 
 		<image if="webvr.isenabled OR device.mobilevr">
 			<cube url="panos/IMG_20260528_153023_00_032.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+
+	<scene name="scene_IMG_20260528_152800_00_030" title="IMG_20260528_152800_00_030" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_152800_00_030.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_152800_00_030.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_152800_00_030.tiles/vr/pano_%s.jpg" />
 		</image>
 
 	</scene>
@@ -215,5 +192,23 @@
 
 	</scene>
 
+
+	<scene name="scene_IMG_20260528_152610_00_029" title="IMG_20260528_152610_00_029" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152610_00_029.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="74.00" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_152610_00_029.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_152610_00_029.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_152610_00_029.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
 
 </krpano>

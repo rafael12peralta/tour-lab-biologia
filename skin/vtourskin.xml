@@ -286,6 +286,15 @@
 	       onloaded.addevent="skin_hotspotstyle_setup();"
 	       />
 
+	<style name="pisada"
+		style="skin_hotspotstyle"
+		url="images/pisada.png"
+		scale="0.5"
+		onover.addevent="tween(scale,0.55);"
+	    onout.addevent="tween(scale,0.5);"
+		use3dtransition="true"
+	/>
+
 	<action name="skin_hotspotstyle_setup" scope="local">
 		if(isvalue(caller.linkedscene) AND skin_settings.tooltips_hotspots,
 			copy(caller.tooltip, scene[get(caller.linkedscene)].title);

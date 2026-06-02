@@ -2,6 +2,12 @@
 
 	<include url="skin/vtourskin.xml" />
 
+	<plugin name="toolbox" 
+		url="plugins/toolbox/toolboxV2.js"
+		preload="true"
+		keep="true"
+		/>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
 	               maps_type="google"
@@ -63,7 +69,7 @@
 	    from above or optionally include one of the predefined designs from below.
 	-->
 
-	<scene name="scene_IMG_20260528_152253_00_028" title="IMG_20260528_152253_00_028" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
+	<scene name="Entrada_Biologia" title="IMG_20260528_152253_00_028" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -79,11 +85,21 @@
 			<cube url="panos/IMG_20260528_152253_00_028.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot2" url="images/pisada.png" style="skin_hotspotstyle" scale="1" ath="-91.52" atv="-0.18" linkedscene="Pasillo_1" use3dtransition="true" hlookat="44.9961938" vlookat="3.8733444" fovtype="MFOV" fov="90" />
-
+		<hotspot
+			name="spot2"
+			style="pisada"
+			url="images/pisada.png"
+			ath="2.18417023734617" 
+			atv="11.54342605462306"
+			linkedscene="scene_IMG_20260528_152913_00_031"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+		
 	</scene>
 
-	<scene name="scene_IMG_20260528_152913_00_031" title="IMG_20260528_152913_00_031" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152913_00_031.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="primeraEscena_Biologia" title="primeraEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152913_00_031.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -101,7 +117,7 @@
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153023_00_032" title="IMG_20260528_153023_00_032" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153023_00_032.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="segundaEscena_Biologia" title="segundaEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153023_00_032.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -119,8 +135,7 @@
 
 	</scene>
 
-
-	<scene name="scene_IMG_20260528_152800_00_030" title="IMG_20260528_152800_00_030" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
+	<scene name="terceraEscena_Biologia" title="terceraEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -138,7 +153,7 @@
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153130_00_033" title="IMG_20260528_153130_00_033" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="cuartaEscena_Biologia" title="cuartaEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -156,7 +171,7 @@
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153343_00_034" title="IMG_20260528_153343_00_034" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153343_00_034.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="quintaEscena_Biologia" title="quintaEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153343_00_034.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -174,7 +189,7 @@
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153541_00_035" title="IMG_20260528_153541_00_035" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153541_00_035.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="sextaEscena_Biologia" title="sextaEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153541_00_035.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -193,7 +208,7 @@
 	</scene>
 
 
-	<scene name="scene_IMG_20260528_152610_00_029" title="IMG_20260528_152610_00_029" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152610_00_029.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="74.00" heading="0.0">
+	<scene name="septimaEscena_Biologia" title="septimaEscena_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152610_00_029.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="74.00" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

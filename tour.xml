@@ -8,6 +8,43 @@
 		keep="true"
 		/>
 
+	<layer name="intro" type="container" keep="true" width="100%" height="100%" bgcolor="0x000000" bgalpha="0.80" zorder="9999" enabled="true" bgcapture="true" onloaded="on_intro_loaded();" onclick="on_intro_click();">
+
+		<layer name="intro_logo" url="images/logo.png" align="center" y="-70" scale="0.2" enabled="false" alpha="0" />
+
+		<layer name="intro_guide" url="images/help_desktop.png" align="center" y="80" scale="1" enabled="false" alpha="0" />
+
+	</layer>
+
+
+	<!-- ═══════════════════════════════════════
+	     ACCIONES DE LA INTRO
+	═══════════════════════════════════════ -->
+
+	<action name="on_intro_loaded">
+		set(hotspot[spot_nav_1].visible, false);
+		delayedcall(2,
+			tween(layer[intro_logo].alpha,  1, 1.2);
+			tween(layer[intro_guide].alpha, 1, 1.2);
+		);
+		set(hotspot[spot_nav_1].visible, false);
+		set(hotspot[spot_nav_2].visible, false);
+	</action>
+
+	<action name="on_intro_click">
+		tween(layer[intro].alpha, 0, 0.8);
+		set(layer[intro].enabled, false);
+		set(hotspot[intro_imagen].visible, true);
+		tween(hotspot[intro_imagen].alpha, 1, 1.0);
+	</action>
+
+	<action name="on_intro_imagen_click">
+		tween(hotspot[intro_imagen].alpha, 0, 0.8);
+		delayedcall(0.85, set(hotspot[intro_imagen].visible, false));
+		set(hotspot[spot_nav_1].visible, true);
+		set(hotspot[spot_nav_2].visible, true);
+	</action>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
 	               maps_type="google"
@@ -69,7 +106,7 @@
 	    from above or optionally include one of the predefined designs from below.
 	-->
 
-	<scene name="scene_IMG_20260528_152253_00_028" title="IMG_20260528_152253_00_028" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
+	<scene name="scene_IMG_20260528_152253_00_028" title="Entrada_Laboratorio_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

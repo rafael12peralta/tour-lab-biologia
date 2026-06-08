@@ -45,6 +45,27 @@
 		set(hotspot[spot_nav_2].visible, true);
 	</action>
 
+	<!-- ═══════════════════════════════════════
+	     ACCIONES DE LOS HOTSPOTS DE NAVEGACIÓN
+	═══════════════════════════════════════ -->
+
+	<action name="on_intro_loaded_2">
+		set(hotspot[spot2].visible, false);
+		set(hotspot[newhs_1].visible, false);
+	</action>
+
+	<action name="on_click_loaded_2">
+		set(hotspot[spot2].visible, true);
+		set(hotspot[newhs_1].visible, true);
+		set(hotspot[spot1].visible, false);
+	</action>
+
+	<action name="on_click_polygon_1">
+		set(hotspot[spot2].visible, false);
+		set(hotspot[newhs_1].visible, false);
+		set(hotspot[spot1].visible, true);
+	</action>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
 	               maps_type="google"
@@ -106,7 +127,7 @@
 	    from above or optionally include one of the predefined designs from below.
 	-->
 
-	<scene name="scene_IMG_20260528_152253_00_028" title="Entrada_Laboratorio_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
+	<scene name="scene_IMG_20260528_152253_00_028" title="Entrada_Laboratorio_Biologia" onstart="on_intro_loaded_2();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152253_00_028.tiles/thumb.jpg" lat="18.48777778" lng="-69.96305556" alt="73.80" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -121,6 +142,21 @@
 		<image if="webvr.isenabled OR device.mobilevr">
 			<cube url="panos/IMG_20260528_152253_00_028.tiles/vr/pano_%s.jpg" />
 		</image>
+
+		<hotspot
+			name="spot1" 
+			ath="2.32819784076440" 
+			atv="-10.85039177910434" 
+			url="images/inicio.png"
+ 			scale="0.50000000000000" 
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_2();"
+		/>
 
 		<hotspot
 			name="spot2"
@@ -139,7 +175,8 @@
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
-			borderwidth="2">
+			borderwidth="2"
+			onclick="on_click_polygon_1();">
 			<point ath="-28.76388809446405" atv="-9.350906119653787" />
 			<point ath="-22.180961951567156" atv="-9.609259228270464" />
 			<point ath="-22.232796409876016" atv="-5.350233415971897" />

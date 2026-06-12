@@ -213,6 +213,18 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot4"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-175.99468405438080" 
+			atv="22.79505248476641"
+			linkedscene="scene_IMG_20260528_152253_00_028"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
 		<hotspot name="newhs_1"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
@@ -302,6 +314,18 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot5"
+			style="pisada"
+			url="images/pisada.png"
+			ath="176.68951656317233" 
+			atv="35.95621116361108"
+			linkedscene="scene_IMG_20260528_152913_00_031"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
 		<hotspot name="newhs_1"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
@@ -357,6 +381,18 @@
 			ath="-84.65992335793976" 
 			atv="22.53649413722977"
 			linkedscene="scene_IMG_20260528_153130_00_033"
+			hlookat="0.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot6"
+			style="pisada"
+			url="images/pisada.png"
+			ath="178.34405351020200" 
+			atv="28.90117632179787"
+			linkedscene="scene_IMG_20260528_153023_00_032"
 			hlookat="0.9961938"
 			vlookat="3.8733444"
 			fov="90"
@@ -506,6 +542,18 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot7"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-177.27080379030173" 
+			atv="22.20797597255902"
+			linkedscene="scene_IMG_20260528_152800_00_030"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
 		<hotspot name="newhs_0"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
@@ -560,6 +608,18 @@
 			ath="32.23607965374941" 
 			atv="8.26080947009676"
 			linkedscene="scene_IMG_20260528_153541_00_035"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot8"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-78.84753921556802" 
+			atv="21.58807066752662"
+			linkedscene="scene_IMG_20260528_153130_00_033"
 			hlookat="44.9961938"
 			vlookat="3.8733444"
 			fov="90"
@@ -623,17 +683,29 @@
 			fov="90"
 		/>
 
-	<hotspot name="newhs_1"
-		fillcolor="0x00FF00"
-		fillalpha="0.4"
-		bordercolor="0xFFFFFF"
-		borderalpha="1.0"
-		borderwidth="2">
-		<point ath="124.11082268069805" atv="-16.388375359361525" />
-		<point ath="-149.67979575047352" atv="-22.25508309555865" />
-		<point ath="-150.12085474479167" atv="37.044534820528845" />
-		<point ath="123.50394865565315" atv="24.86430083787688" />
-	</hotspot>
+		<hotspot
+			name="spot9"
+			style="pisada"
+			url="images/pisada.png"
+			ath="4.69815194918812" 
+			atv="6.94881053410904"
+			linkedscene="scene_IMG_20260528_153343_00_034"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot name="newhs_1"
+			fillcolor="0x00FF00"
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="124.11082268069805" atv="-16.388375359361525" />
+			<point ath="-149.67979575047352" atv="-22.25508309555865" />
+			<point ath="-150.12085474479167" atv="37.044534820528845" />
+			<point ath="123.50394865565315" atv="24.86430083787688" />
+		</hotspot>
 
 	</scene>
 
@@ -655,7 +727,7 @@
 		</image>
 
 		<hotspot
-			name="spot9"
+			name="spot1"
 			style="pisada"
 			url="images/pisada.png"
 			ath="-134.60173605656797" 
@@ -666,6 +738,53 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot2"
+			style="pisada"
+			url="images/pisada.png"
+			ath="173.77401767166174" 
+			atv="11.70202282867995"
+			linkedscene="scene_IMG_20260528_153023_00_032"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot3"
+			style="pisada"
+			url="images/pisada.png"
+			ath="87.60508743499884" 
+			atv="13.83551307691318"
+			linkedscene="scene_IMG_20260528_153130_00_033"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot4"
+			style="pisada"
+			url="images/pisada.png"
+			ath="39.99315393974945" 
+			atv="4.55663057938686"
+			linkedscene="scene_IMG_20260528_153343_00_034"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot5"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-36.51727720668771" 
+			atv="11.23868486619749"
+			linkedscene="scene_IMG_20260528_153541_00_035"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
 	</scene>
 
 </krpano>

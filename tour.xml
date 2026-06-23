@@ -49,6 +49,7 @@
 	     ACCIONES DE LOS HOTSPOTS DE NAVEGACIÓN
 	═══════════════════════════════════════ -->
 
+	<!-- ESCENA GENERAL / Navegación Spot 1-2 -->
 	<action name="on_intro_loaded_2">
 		set(hotspot[spot2].visible, false);
 		set(hotspot[newhs_1].visible, false);
@@ -66,10 +67,12 @@
 		set(hotspot[spot1].visible, true);
 	</action>
 
+	<!-- ESCENA 032 -->
 	<action name="on_intro_loaded_032">
 		set(hotspot[spot1].visible, false);
 	</action>
 
+	<!-- ESCENA LICUADORA -->
 	<action name="on_click_loaded_licuadora">
 		set(hotspot[spot1].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -80,6 +83,7 @@
 		set(hotspot[spot1].visible, true);
 	</action>
 
+	<!-- ESCENA 030 -->
 	<action name="on_intro_loaded_030">
 		set(hotspot[spot1].visible, false);
 		set(hotspot[spot2].visible, false);
@@ -88,6 +92,7 @@
 		set(hotspot[spot5].visible, false);
 	</action>
 
+	<!-- ESCENA CENTRIFUGA -->
 	<action name="on_click_loaded_centrifuga">
 		set(hotspot[spot1].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -110,6 +115,7 @@
 		set(hotspot[spot1].visible, true);
 	</action>
 
+	<!-- ESCENA INCUBADORA -->
 	<action name="on_click_loaded_incubadora">
 		set(hotspot[spot2].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -132,6 +138,7 @@
 		set(hotspot[spot2].visible, true);
 	</action>
 
+	<!-- ESCENA HORNO -->
 	<action name="on_click_loaded_horno">
 		set(hotspot[spot3].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -154,6 +161,7 @@
 		set(hotspot[spot3].visible, true);
 	</action>
 
+	<!-- ESCENA DESECADOR -->
 	<action name="on_click_loaded_desecador">
 		set(hotspot[spot4].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -176,6 +184,7 @@
 		set(hotspot[spot4].visible, true);
 	</action>
 
+	<!-- ESCENA AUTOCLAVE (TO) -->
 	<action name="on_click_loaded_autoclave_to">
 		set(hotspot[spot5].visible, false);
 		set(hotspot[newhs_1].visible, true);
@@ -194,6 +203,7 @@
 		set(hotspot[spot5].visible, true);
 	</action>
 
+	<!-- ESCENA OFICINA -->
 	<action name="on_intro_loaded_oficina">
 		set(hotspot[spot3].visible, false);
 		set(hotspot[spot4].visible, false);
@@ -201,20 +211,14 @@
 		set(hotspot[spot6].visible, false);
 	</action>
 
+	<!-- ESCENA QUÉ HACEMO -->
 	<action name="on_click_loaded_qhacemo">
 		set(hotspot[spot4].visible, false);
 	</action>
 
+	<!-- ESCENA AUTOCLAVE VERTICAL -->
 	<action name="on_click_loaded_autoclave_vertical">
 		set(hotspot[spot5].visible, false);
-	</action>
-
-	<action name="on_click_loaded_nevera">
-		set(hotspot[spot3].visible, false);
-	</action>
-
-	<action name="on_click_loaded_llave_gas">
-		set(hotspot[spot6].visible, false);
 	</action>
 
 	<action name="on_click_polygon_autoclave_vertical">
@@ -224,6 +228,11 @@
 		set(hotspot[spot6].visible, false);
 	</action>
 
+	<!-- ESCENA NEVERA -->
+	<action name="on_click_loaded_nevera">
+		set(hotspot[spot3].visible, false);
+	</action>
+
 	<action name="on_click_polygon_nevera">
 		set(hotspot[spot3].visible, true);
 		set(hotspot[spot4].visible, false);
@@ -231,10 +240,8 @@
 		set(hotspot[spot6].visible, false);
 	</action>
 
-	<action name="on_click_polygon_qhacemo">
-		set(hotspot[spot4].visible, true);
-		set(hotspot[spot3].visible, false);
-		set(hotspot[spot5].visible, false);
+	<!-- ESCENA LLAVE GAS -->
+	<action name="on_click_loaded_llave_gas">
 		set(hotspot[spot6].visible, false);
 	</action>
 
@@ -243,6 +250,67 @@
 		set(hotspot[spot3].visible, false);
 		set(hotspot[spot4].visible, false);
 		set(hotspot[spot5].visible, false);
+	</action>
+	
+	<!-- ESCENA HOT PLATE -->
+	<action name="on_click_loaded_hot_plate">
+		set(hotspot[spot8].visible, false);
+		set(hotspot[spot9].visible, false);
+	</action>
+
+	<action name="on_click_polygon_hot_plate">
+		set(hotspot[spot8].visible, false);
+		set(hotspot[spot9].visible, true);
+	</action>
+
+	<action name="on_click_polygon_balanza">
+		set(hotspot[spot8].visible, true);
+		set(hotspot[spot9].visible, false);
+	</action>
+
+	<action name="on_click_hot_plate">
+		set(hotspot[spot9].visible, false);
+	</action>
+
+	<action name="on_click_balanza">
+		set(hotspot[spot8].visible, false);
+	</action>
+
+	<!-- ESCENA DUCHA -->
+	<action name="on_click_loaded_ducha">
+		set(hotspot[spot9].visible, false);
+		set(hotspot[spot10].visible, false);
+	</action>
+
+	<action name="on_click_polygon_ducha">
+		set(hotspot[spot9].visible, false);
+		set(hotspot[spot10].visible, true);
+	</action>
+
+	<action name="on_click_polygon_materiales">
+		set(hotspot[spot9].visible, true);
+		set(hotspot[spot10].visible, false);
+	</action>
+
+	<action name="on_click_ducha">
+		set(hotspot[spot10].visible, false);
+	</action>
+
+	<action name="on_click_materiales">
+		set(hotspot[spot9].visible, false);
+	</action>
+
+	<!-- ESCENA ALMACEN -->
+	<action name="on_click_loaded_almacen">
+		set(hotspot[spot10].visible, false);
+	</action>
+
+	<action name="on_click_polygon_almacen">
+		set(hotspot[spot10].visible, true);
+	</action>
+
+	<action name="on_click_almacen">
+		set(hotspot[spot10].visible, false);
 	</action>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
@@ -845,7 +913,7 @@
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153130_00_033" title="Dispositivos_Laboratorio_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="scene_IMG_20260528_153130_00_033" title="Dispositivos_Laboratorio_Biologia" onstart="on_click_loaded_hot_plate();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -885,6 +953,37 @@
 			fov="90"
 		/>
 
+		<hotspot name="newhs_0"
+			fillcolor="0x00FF00"
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_hot_plate();">
+			<point ath="90.99934594507013" atv="9.648772919843408" />
+			<point ath="90.70960938931401" atv="14.071888229617137" />
+			<point ath="100.92077894506991" atv="13.93057270403413" />
+			<point ath="99.88956110247886" atv="9.548748929641246" />
+		</hotspot>
+
+		<hotspot name="newhs_2"
+			fillcolor="0x00FF00"
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_balanza();">
+			<point ath="73.06436419744523" atv="8.85651657901216" />
+			<point ath="71.6205011654265" atv="12.52238496351013" />
+			<point ath="77.10769757001873" atv="12.958190230516001" />
+			<point ath="77.09455711625185" atv="14.020232260148163" />
+			<point ath="86.8971158388913" atv="14.22145245451592" />
+			<point ath="88.32890720007168" atv="10.675931891225929" />
+			<point ath="87.75996097784503" atv="5.883410351414137" />
+			<point ath="80.52625107690119" atv="5.820582663753255" />
+			<point ath="74.82044329817955" atv="6.662516600313857" />
+		</hotspot>
+
 		<hotspot
 			name="spot8"
 			ath="67.04552682393398" 
@@ -897,7 +996,7 @@
 			rz="0" ox="0.00000000000000"
 			oy="0.00000000000000"
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_to();"
+			onclick="on_click_balanza();"
 		/>
 
 		<hotspot
@@ -909,44 +1008,15 @@
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
-			rz="0" ox="0.00000000000000"
+			rz="0" ox="0.00000000000000"	
 			oy="0.00000000000000"
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_to();"
+			onclick="on_click_hot_plate();"
 		/>
-
-		<hotspot name="newhs_0"
-			fillcolor="0x00FF00"
-			fillalpha="0.4"
-			bordercolor="0xFFFFFF"
-			borderalpha="1.0"
-			borderwidth="2">
-			<point ath="90.99934594507013" atv="9.648772919843408" />
-			<point ath="90.70960938931401" atv="14.071888229617137" />
-			<point ath="100.92077894506991" atv="13.93057270403413" />
-			<point ath="99.88956110247886" atv="9.548748929641246" />
-		</hotspot>
-
-		<hotspot name="newhs_2"
-			fillcolor="0x00FF00"
-			fillalpha="0.4"
-			bordercolor="0xFFFFFF"
-			borderalpha="1.0"
-			borderwidth="2">
-			<point ath="73.06436419744523" atv="8.85651657901216" />
-			<point ath="71.6205011654265" atv="12.52238496351013" />
-			<point ath="77.10769757001873" atv="12.958190230516001" />
-			<point ath="77.09455711625185" atv="14.020232260148163" />
-			<point ath="86.8971158388913" atv="14.22145245451592" />
-			<point ath="88.32890720007168" atv="10.675931891225929" />
-			<point ath="87.75996097784503" atv="5.883410351414137" />
-			<point ath="80.52625107690119" atv="5.820582663753255" />
-			<point ath="74.82044329817955" atv="6.662516600313857" />
-		</hotspot>
 
 	</scene>
 
-	<scene name="scene_IMG_20260528_153343_00_034" title="Ducha_Laboratorio_Biologia" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153343_00_034.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="scene_IMG_20260528_153343_00_034" title="Ducha_Laboratorio_Biologia" onstart="on_click_loaded_ducha();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153343_00_034.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -986,42 +1056,13 @@
 			fov="90"
 		/>
 
-		<hotspot
-			name="spot9"
-			ath="-37.10538395279582" 
-			atv="-25.11681636881573"
-			url="images/ducha.png"
-			scale="0.50000000000000"
-			depth="1000"
-			rx="-32.00000000000000"
-			ry="-3.50000000000000"
-			rz="0" ox="0.00000000000000"
-			oy="0.00000000000000"
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_to();"
-		/>
-
-		<hotspot
-			name="spot10"
-			ath="-37.10538395279582" 
-			atv="-25.11681636881573"
-			url="images/materiales.png"
-			scale="0.50000000000000"
-			depth="1000"
-			rx="-32.00000000000000"
-			ry="-3.50000000000000"
-			rz="0" ox="0.00000000000000"
-			oy="0.00000000000000"
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_to();"
-		/>
-
 		<hotspot name="newhs_3"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
-			borderwidth="2">
+			borderwidth="2"
+			onclick="on_click_polygon_ducha();">
 			<point ath="-146.9774633396254" atv="10.520442335793062" />
 			<point ath="-137.30154202959318" atv="10.401076051726319" />
 			<point ath="-136.75132125250252" atv="9.13818861516487" />
@@ -1035,7 +1076,8 @@
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
-			borderwidth="2">
+			borderwidth="2"
+			onclick="on_click_polygon_materiales();">
 			<point ath="-178.8058671701183" atv="-35.799095128196335" />
 			<point ath="178.27957662463544" atv="-42.04678362854669" />
 			<point ath="157.56091589652374" atv="-31.932226233661773" />
@@ -1044,9 +1086,39 @@
 			<point ath="171.66637866396627" atv="6.0562815484551065" />
 			<point ath="167.86152159476123" atv="-28.5757891902553" />
 		</hotspot>
+
+		<hotspot
+			name="spot9"
+			ath="162.52678967432121" 
+			atv="-12.11300421470238"
+			url="images/ducha.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_materiales();"
+		/>
+
+		<hotspot
+			name="spot10"
+			ath="-135.01055759695075" 
+			atv="-2.83207560033419"
+			url="images/materiales.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_ducha();"
+		/>
 	</scene>
 
-	<scene name="scene_IMG_20260528_153541_00_035" title="Sala_de_Espera_Biologia_2" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153541_00_035.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+	<scene name="scene_IMG_20260528_153541_00_035" title="Sala_de_Espera_Biologia_2" onstart="on_click_loaded_almacen();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153541_00_035.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1086,10 +1158,23 @@
 			fov="90"
 		/>
 
+		<hotspot name="newhs_1"
+			fillcolor="0x00FF00"
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_almacen();">
+			<point ath="124.11082268069805" atv="-16.388375359361525" />
+			<point ath="-149.67979575047352" atv="-22.25508309555865" />
+			<point ath="-150.12085474479167" atv="37.044534820528845" />
+			<point ath="123.50394865565315" atv="24.86430083787688" />
+		</hotspot>
+
 		<hotspot
 			name="spot10"
-			ath="-37.10538395279582" 
-			atv="-25.11681636881573"
+			ath="152.16962379905740" 
+			atv="-2.19507616482052"
 			url="images/almacenes.png"
 			scale="0.50000000000000"
 			depth="1000"
@@ -1098,21 +1183,8 @@
 			rz="0" ox="0.00000000000000"
 			oy="0.00000000000000"
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_to();"
+			onclick="on_click_almacen();"
 		/>
-
-		<hotspot name="newhs_1"
-			fillcolor="0x00FF00"
-			fillalpha="0.4"
-			bordercolor="0xFFFFFF"
-			borderalpha="1.0"
-			borderwidth="2">
-			<point ath="124.11082268069805" atv="-16.388375359361525" />
-			<point ath="-149.67979575047352" atv="-22.25508309555865" />
-			<point ath="-150.12085474479167" atv="37.044534820528845" />
-			<point ath="123.50394865565315" atv="24.86430083787688" />
-		</hotspot>
-
 	</scene>
 
 
@@ -1190,6 +1262,51 @@
 			hlookat="44.9961938"
 			vlookat="3.8733444"
 			fov="90"
+		/>	
+
+		<hotspot
+			name="spot6"
+			ath="25.34419215644493" 
+			atv="-12.71666623114794"
+			url="images/acabo.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_almacen();"
+		/>
+
+		<hotspot
+			name="spot7"
+			ath="-0.54113706061275" 
+			atv="21.44697168330049"
+			url="images/teoria.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_almacen();"
+		/>
+
+		<hotspot
+			name="spot8"
+ 			ath="41.11125027209613" 
+			atv="22.70496435902346"
+			url="images/practica.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_almacen();"
 		/>
 	</scene>
 

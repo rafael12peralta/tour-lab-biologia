@@ -665,7 +665,7 @@
 			name="spot1"
 			ath="1.0"
 			atv="7.0"
-			url="images/centrifuga.png"
+			url="images/centrifugas.png"
 			scale="0.50000000000000"
 			depth="1000"
 			rx="-32.00000000000000"
@@ -885,6 +885,36 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot8"
+			ath="67.04552682393398" 
+			atv="-1.92884959959409"
+			url="images/balanza.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
+		/>
+
+		<hotspot
+			name="spot9"
+ 			ath="123.06548820181453" 
+			atv="-2.15075831936021"
+			url="images/hot_plate.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
+		/>
+
 		<hotspot name="newhs_0"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
@@ -956,6 +986,36 @@
 			fov="90"
 		/>
 
+		<hotspot
+			name="spot9"
+			ath="-37.10538395279582" 
+			atv="-25.11681636881573"
+			url="images/ducha.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
+		/>
+
+		<hotspot
+			name="spot10"
+			ath="-37.10538395279582" 
+			atv="-25.11681636881573"
+			url="images/materiales.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
+		/>
+
 		<hotspot name="newhs_3"
 			fillcolor="0x00FF00"
 			fillalpha="0.4"
@@ -1024,6 +1084,21 @@
 			hlookat="44.9961938"
 			vlookat="3.8733444"
 			fov="90"
+		/>
+
+		<hotspot
+			name="spot10"
+			ath="-37.10538395279582" 
+			atv="-25.11681636881573"
+			url="images/almacenes.png"
+			scale="0.50000000000000"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
 		/>
 
 		<hotspot name="newhs_1"

@@ -90,6 +90,8 @@
 		set(hotspot[spot3].visible, false);
 		set(hotspot[spot4].visible, false);
 		set(hotspot[spot5].visible, false);
+		set(hotspot[correct].visible, false);
+		set(hotspot[incorrect].visible, false);
 	</action>
 
 	<!-- ESCENA CENTRIFUGA -->
@@ -209,6 +211,8 @@
 		set(hotspot[spot4].visible, false);
 		set(hotspot[spot5].visible, false);
 		set(hotspot[spot6].visible, false);
+		set(hotspot[incorrect].visible, false);
+		set(hotspot[correct].visible, false);
 	</action>
 
 	<!-- ESCENA QUÉ HACEMO -->
@@ -320,32 +324,38 @@
 		set(hotspot[spot10].visible, false);
 	</action>
 
+	<!-- ESCENA CORRECTO E INCORRECTO -->
+
+	<action name="on_click_correct">
+		set(hotspot[spot10].visible, true);
+	</action>
+
+	<action name="on_click_incorrect">
+		set(hotspot[spot10].visible, false);
+	</action>
+
     <!-- Seccion de preguntas -->
 
 	<action name="quiz_select">
-
     <!-- %1 = nombre del hotspot -->
     <!-- %2 = correcto (true/false) -->
-
     if(%2,
 
-        <!-- ✅ CORRECTO -->
+        <!-- CORRECTO -->
         set(hotspot[%1].fillcolor, 0x00FF00);
         set(hotspot[%1].fillalpha, 0.6);
-
-        showlayer(correct_layer);
-
+		set(hotspot[incorrect].visible, false);	
+		set(hotspot[correct].visible, true);
+		set(hotspot[pregunta].visible, false)
     ,
-
-        <!-- ❌ INCORRECTO -->
+        <!-- INCORRECTO -->
         set(hotspot[%1].fillcolor, 0xFF0000);
         set(hotspot[%1].fillalpha, 0.6);
-
-        showlayer(incorrect_layer);
-
+		set(hotspot[correct].visible, false);
+		set(hotspot[incorrect].visible, true);
+		set(hotspot[pregunta].visible, false)
     );
-
-</action>
+	</action>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
@@ -657,18 +667,6 @@
 		</image>
 
 		<hotspot
-			name="spot1"
-			style="pisada"
-			url="images/pisada.png"
-			ath="2.18417023734617" 
-			atv="11.54342605462306"
-			linkedscene="scene_IMG_20260528_153023_00_032"
-			hlookat="44.9961938"
-			vlookat="3.8733444"
-			fov="90"
-		/>
-
-		<hotspot
 			name="spot2"
 			style="pisada"
 			url="images/pisada.png"
@@ -749,7 +747,7 @@
 		</hotspot>
 
 		<hotspot
-			name="spot7" 
+			name="pregunta" 
 			ath="-24.18500897928141" atv="-3.37816113487801"
 			url="images/p1.png"
  			scale="0.35" 
@@ -763,28 +761,34 @@
 			onclick="on_click_loaded_llave_gas();"
 		/>
 
-		<layer name="correct_layer"
-			type="text"
-			html="✔ CORRECTO"
-			align="center"
-			x="0"
-			y="0"
-			bgcolor="0x00FF00"
-			bgalpha="0.9"
-			visible="false"
-			onloaded="delayedcall(1.5, hide());"
+		<hotspot
+			name="correct"
+			onclick="loadscene(scene_IMG_20260528_153023_00_032, null, MERGE, BLEND(0.5));"
+			ath="-24.18500897928141" atv="-3.37816113487801"
+			url="images/correct.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
 		/>
 
-		<layer name="incorrect_layer"
-			type="text"
-			html="✖ INCORRECTO"
-			align="center"
-			x="0"
-			y="0"
-			bgcolor="0xFF0000"
-			bgalpha="0.9"
-			visible="false"
-			onloaded="delayedcall(1.5, hide());"
+		<hotspot 
+			name="incorrect"
+			ath="-24.18500897928141" atv="-3.37816113487801"
+			url="images/incorrect.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_152913_00_031_p, null, MERGE, NONE);"
 		/>
 	</scene>
 
@@ -923,6 +927,7 @@
 			url="images/centrifugas.png"
 			scale="0.35"
 			depth="1000"
+			alpha="0.8"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
 			rz="0" ox="0.00000000000000"
@@ -938,6 +943,7 @@
 			url="images/incubadora.png"
  			scale="0.35" 
 			depth="1000"
+			alpha="0.8"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
 			rz="0" ox="0.00000000000000"
@@ -953,6 +959,7 @@
 			url="images/horno.png"
 			scale="0.35"
 			depth="1000"
+			alpha="0.8"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
 			rz="0" ox="0.00000000000000"
@@ -968,6 +975,7 @@
 			url="images/desecador.png"
  			scale="0.35" 
 			depth="1000"
+			alpha="0.8"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
 			rz="0" ox="0.00000000000000"
@@ -981,6 +989,7 @@
 			ath="-36.00011676221129" atv="0.89210686129828"
 			url="images/autoclave_to.png"
  			scale="0.35" 
+			alpha="0.8"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1099,7 +1108,7 @@
 
 	</scene>
 
-<scene name="scene_IMG_20260528_152800_00_030_p" title="Esquina_Laboratorio_Biologia" onstart="on_intro_loaded_030();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
+<scene name="scene_IMG_20260528_152800_00_030_p" title="Esquina_Laboratorio_Biologia_p" onstart="on_intro_loaded_030();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1215,7 +1224,7 @@
 		/>
 
 		<hotspot name="newhs_1"
-			onclick="on_click_polygon_centrifuga();"
+			onclick="quiz_select(newhs_1, false);"
 			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
@@ -1236,7 +1245,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_2"
-			onclick="on_click_polygon_autoclave_to();"
+			onclick="quiz_select(newhs_2, false);"
 			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
@@ -1277,7 +1286,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_4"
-			onclick="on_click_polygon_desecador();"
+			onclick="quiz_select(newhs_4, false);"
 			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
@@ -1292,7 +1301,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_6"
-			onclick="on_click_polygon_horno();"
+			onclick="quiz_select(newhs_6, false);"
 			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
@@ -1307,7 +1316,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_8"
-			onclick="on_click_polygon_incubadora();"
+			onclick="quiz_select(newhs_8, true);"
 			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
@@ -1322,33 +1331,48 @@
 		</hotspot>
 
 		<hotspot
-			name="spot6" 
-			ath="-72.64995566491802" 
-			atv="-0.46516265179276"
-			url="images/p21.png"
- 			scale="0.35" 
-			depth="1000" 
-			rx="-32.00000000000000" 
-			ry="-3.50000000000000" 
-			rz="0" ox="0.00000000000000" 
-			oy="0.00000000000000" 
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_llave_gas();"
-		/>
-
-		<hotspot
-			name="spot7" 
-			ath="-72.64995566491802" 
-			atv="-0.46516265179276"
+			name="pregunta" 
+			ath="-6.47509081995207" atv="-24.55838138140879"
 			url="images/p22.png"
  			scale="0.35" 
 			depth="1000" 
+			alpha="0.8"
 			rx="-32.00000000000000" 
 			ry="-3.50000000000000" 
 			rz="0" ox="0.00000000000000" 
 			oy="0.00000000000000" 
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_llave_gas();"
+			onclick=""
+		/>
+
+		<hotspot
+			name="correct"
+			ath="-6.47509081995207" atv="-24.55838138140879"
+			url="images/correct.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_153130_00_033, null, MERGE, BLEND(0.5));"
+		/>
+
+		<hotspot 
+			name="incorrect"
+			ath="-6.47509081995207" atv="-24.55838138140879"
+			url="images/incorrect.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_152800_00_030_p, null, MERGE, NONE);"
 		/>
 	</scene>
 

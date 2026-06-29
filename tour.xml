@@ -216,6 +216,13 @@
 		set(hotspot[spot4].visible, false);
 	</action>
 
+	<action name="on_click_polygon_qhacemo">
+		set(hotspot[spot5].visible, false);
+		set(hotspot[spot3].visible, false);
+		set(hotspot[spot4].visible, true);
+		set(hotspot[spot6].visible, false);
+	</action>
+
 	<!-- ESCENA AUTOCLAVE VERTICAL -->
 	<action name="on_click_loaded_autoclave_vertical">
 		set(hotspot[spot5].visible, false);
@@ -313,6 +320,33 @@
 		set(hotspot[spot10].visible, false);
 	</action>
 
+    <!-- Seccion de preguntas -->
+
+	<action name="quiz_select">
+
+    <!-- %1 = nombre del hotspot -->
+    <!-- %2 = correcto (true/false) -->
+
+    if(%2,
+
+        <!-- ✅ CORRECTO -->
+        set(hotspot[%1].fillcolor, 0x00FF00);
+        set(hotspot[%1].fillalpha, 0.6);
+
+        showlayer(correct_layer);
+
+    ,
+
+        <!-- ❌ INCORRECTO -->
+        set(hotspot[%1].fillcolor, 0xFF0000);
+        set(hotspot[%1].fillalpha, 0.6);
+
+        showlayer(incorrect_layer);
+
+    );
+
+</action>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
 	               maps_type="google"
@@ -395,7 +429,8 @@
 			ath="2.32819784076440" 
 			atv="-10.85039177910434" 
 			url="images/Inicio.png"
- 			scale="0.50000000000000" 
+			alpha="0.8"
+ 			scale="0.35" 
 			depth="1000" 
 			rx="-32.00000000000000" 
 			ry="-3.50000000000000" 
@@ -418,7 +453,7 @@
 		/>
 		
 		<hotspot name="newhs_1"          
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -433,6 +468,179 @@
 	</scene>
 
 	<scene name="scene_IMG_20260528_152913_00_031" title="Sala_de_Espera_Biologia" onstart="on_intro_loaded_oficina();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152913_00_031.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_152913_00_031.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_152913_00_031.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_152913_00_031.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot
+			name="spot1"
+			style="pisada"
+			url="images/pisada.png"
+			ath="2.18417023734617" 
+			atv="11.54342605462306"
+			onclick="loadscene(scene_IMG_20260528_152913_00_031_p, null, MERGE, NONE);"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot2"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-175.99468405438080" 
+			atv="22.79505248476641"
+			linkedscene="scene_IMG_20260528_152253_00_028"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot name="newhs_1"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_autoclave_vertical();"
+			zorder="0">
+			<point ath="56.55587322643629" atv="47.07097507022208" />
+			<point ath="92.688595251093" atv="50.10774926510546" />
+			<point ath="91.5414514295984" atv="30.835506631416457" />
+			<point ath="89.64217677994804" atv="17.595415045226257" />
+			<point ath="65.39341283088964" atv="16.86068293636389" />
+			<point ath="55.38966470528703" atv="26.23766411497905" />
+		</hotspot>
+
+		<hotspot name="newhs_2"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_qhacemo();"
+			zorder="0">
+			<point ath="90.80097804117727" atv="-30.531840059742606" />
+			<point ath="119.31754904064516" atv="-25.33657592334628" />
+			<point ath="120.07788293759447" atv="33.18429929871255" />
+			<point ath="93.34155838704763" atv="37.45107205561139" />
+		</hotspot>
+
+		<hotspot name="newhs_3"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_llave_gas();"
+			zorder="0">
+			<point ath="-68.9744233128825" atv="7.187217316505403" />
+			<point ath="-68.48699517632139" atv="7.345024239604349" />
+			<point ath="-68.34821160104804" atv="6.375300316131683" />
+			<point ath="-66.95157591236307" atv="6.3352341226879965" />
+			<point ath="-66.97124810523582" atv="7.676064512389204" />
+			<point ath="-66.43038578120297" atv="8.355593497962687" />
+			<point ath="-67.801561732175" atv="8.765965523052763" />
+			<point ath="-67.49851170733814" atv="10.16025717990594" />
+			<point ath="-69.25550765259618" atv="10.007232014663945" />
+		</hotspot>
+
+		<hotspot name="newhs_4"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="on_click_polygon_nevera();"
+			zorder="0">
+			<point ath="19.046170768089098" atv="-9.763571645094077" />
+			<point ath="30.478751031355387" atv="-13.490452630747445" />
+			<point ath="29.884154888800936" atv="-21.29067614004769" />
+			<point ath="50.97846909312193" atv="-28.228824275419946" />
+			<point ath="64.08367234701109" atv="-19.452689321996814" />
+			<point ath="64.10852557731886" atv="14.795021042846129" />
+			<point ath="52.21323445174414" atv="25.619219292025893" />
+			<point ath="51.7769958689488" atv="49.833414272049176" />
+			<point ath="18.434250208829667" atv="29.393732541858643" />
+		</hotspot>
+
+		<hotspot
+			name="spot3" 
+			ath="38.75904402726258" 
+			atv="-6.84757084307909"
+			url="images/nevera.png"
+ 			scale="0.35" 
+			alpha="0.8"
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_nevera();"
+		/>
+
+		<hotspot
+			name="spot4" 
+			ath="111.02208945752733" 
+			atv="-5.92821884948414"
+			url="images/qhacemo.png"
+ 			scale="0.35" 
+			alpha="0.8"
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_qhacemo();"
+		/>
+
+		<hotspot
+			name="spot5" 
+			ath="71.97911118201637" 
+			atv="7.68027270685129" 
+			url="images/autoclave_vertical.png"
+ 			scale="0.35" 
+			alpha="0.8"		
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_vertical();"
+		/>
+
+		<hotspot
+			name="spot6" 
+			ath="-72.64995566491802" 
+			atv="-0.46516265179276"
+			url="images/llave_gas.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_llave_gas();"
+		/>
+	</scene>
+
+	<scene name="scene_IMG_20260528_152913_00_031_p" title="Sala_de_Espera_Biologia_p" onstart="on_intro_loaded_oficina();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152913_00_031.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -473,12 +681,12 @@
 		/>
 
 		<hotspot name="newhs_1"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
 			borderwidth="2"
-			onclick="on_click_polygon_autoclave_vertical();"
+			onclick="quiz_select(newhs_1, true);"
 			zorder="0">
 			<point ath="56.55587322643629" atv="47.07097507022208" />
 			<point ath="92.688595251093" atv="50.10774926510546" />
@@ -489,12 +697,12 @@
 		</hotspot>
 
 		<hotspot name="newhs_2"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
 			borderwidth="2"
-			onclick="on_click_polygon_qhacemo();"
+			onclick="quiz_select(newhs_2, false);"
 			zorder="0">
 			<point ath="90.80097804117727" atv="-30.531840059742606" />
 			<point ath="119.31754904064516" atv="-25.33657592334628" />
@@ -503,12 +711,12 @@
 		</hotspot>
 
 		<hotspot name="newhs_3"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
 			borderwidth="2"
-			onclick="on_click_polygon_llave_gas();"
+			onclick="quiz_select(newhs_3, false);"
 			zorder="0">
 			<point ath="-68.9744233128825" atv="7.187217316505403" />
 			<point ath="-68.48699517632139" atv="7.345024239604349" />
@@ -522,12 +730,12 @@
 		</hotspot>
 
 		<hotspot name="newhs_4"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
 			borderwidth="2"
-			onclick="on_click_polygon_nevera();"
+			onclick="quiz_select(newhs_4, false);"
 			zorder="0">
 			<point ath="19.046170768089098" atv="-9.763571645094077" />
 			<point ath="30.478751031355387" atv="-13.490452630747445" />
@@ -541,63 +749,42 @@
 		</hotspot>
 
 		<hotspot
-			name="spot3" 
-			ath="38.75904402726258" 
-			atv="-6.84757084307909"
-			url="images/nevera.png"
- 			scale="0.50000000000000" 
+			name="spot7" 
+			ath="-24.18500897928141" atv="-3.37816113487801"
+			url="images/p1.png"
+ 			scale="0.35" 
 			depth="1000" 
-			rx="-32.00000000000000" 
-			ry="-3.50000000000000" 
-			rz="0" ox="0.00000000000000" 
-			oy="0.00000000000000" 
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_nevera();"
-		/>
-
-		<hotspot
-			name="spot4" 
-			ath="111.02208945752733" 
-			atv="-5.92821884948414"
-			url="images/qhacemo.png"
- 			scale="0.50000000000000" 
-			depth="1000" 
-			rx="-32.00000000000000" 
-			ry="-3.50000000000000" 
-			rz="0" ox="0.00000000000000" 
-			oy="0.00000000000000" 
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_qhacemo();"
-		/>
-
-		<hotspot
-			name="spot5" 
-			ath="71.97911118201637" 
-			atv="7.68027270685129" 
-			url="images/autoclave_to.png"
- 			scale="0.50000000000000" 
-			depth="1000" 
-			rx="-32.00000000000000" 
-			ry="-3.50000000000000" 
-			rz="0" ox="0.00000000000000" 
-			oy="0.00000000000000" 
-			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_autoclave_vertical();"
-		/>
-
-		<hotspot
-			name="spot6" 
-			ath="-72.64995566491802" 
-			atv="-0.46516265179276"
-			url="images/llave_gas.png"
- 			scale="0.50000000000000" 
-			depth="1000" 
+			alpha="0.8"
 			rx="-32.00000000000000" 
 			ry="-3.50000000000000" 
 			rz="0" ox="0.00000000000000" 
 			oy="0.00000000000000" 
 			tx="0" ty="0" tz="0"
 			onclick="on_click_loaded_llave_gas();"
+		/>
+
+		<layer name="correct_layer"
+			type="text"
+			html="✔ CORRECTO"
+			align="center"
+			x="0"
+			y="0"
+			bgcolor="0x00FF00"
+			bgalpha="0.9"
+			visible="false"
+			onloaded="delayedcall(1.5, hide());"
+		/>
+
+		<layer name="incorrect_layer"
+			type="text"
+			html="✖ INCORRECTO"
+			align="center"
+			x="0"
+			y="0"
+			bgcolor="0xFF0000"
+			bgalpha="0.9"
+			visible="false"
+			onloaded="delayedcall(1.5, hide());"
 		/>
 	</scene>
 
@@ -646,7 +833,7 @@
 			ath="9.105384793480312"
 			atv="6.0"
 			url="images/licuadora.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -658,7 +845,7 @@
 
 		<hotspot name="newhs_1"
 			onclick="on_click_polygon_licuadora();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -711,7 +898,7 @@
 			url="images/pisada.png"
 			ath="-84.65992335793976" 
 			atv="22.53649413722977"
-			linkedscene="scene_IMG_20260528_153130_00_033"
+			onclick="loadscene(scene_IMG_20260528_152800_00_030_p, null, MERGE, NONE);"
 			hlookat="0.9961938"
 			vlookat="3.8733444"
 			fov="90"
@@ -734,7 +921,7 @@
 			ath="1.0"
 			atv="7.0"
 			url="images/centrifugas.png"
-			scale="0.50000000000000"
+			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -749,7 +936,7 @@
 			ath="101.83467658017756" 
 			atv="-5.78776065514775" 
 			url="images/incubadora.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -764,7 +951,7 @@
 			ath="66.0"
 			atv="0.0"
 			url="images/horno.png"
-			scale="0.50000000000000"
+			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -779,7 +966,7 @@
 			ath="36.0"
 			atv="5.0"
 			url="images/desecador.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -791,10 +978,9 @@
 
 		<hotspot
 			name="spot5"
-			ath="-37.10538395279582" 
-			atv="-25.11681636881573"
+			ath="-36.00011676221129" atv="0.89210686129828"
 			url="images/autoclave_to.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -806,7 +992,7 @@
 
 		<hotspot name="newhs_1"
 			onclick="on_click_polygon_centrifuga();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -827,7 +1013,7 @@
 
 		<hotspot name="newhs_2"
 			onclick="on_click_polygon_autoclave_to();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -868,7 +1054,7 @@
 
 		<hotspot name="newhs_4"
 			onclick="on_click_polygon_desecador();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -883,7 +1069,7 @@
 
 		<hotspot name="newhs_6"
 			onclick="on_click_polygon_horno();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -898,7 +1084,7 @@
 
 		<hotspot name="newhs_8"
 			onclick="on_click_polygon_incubadora();"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -911,6 +1097,259 @@
 			<point ath="90.29894494087426" atv="16.761186689966678" />
 		</hotspot>
 
+	</scene>
+
+<scene name="scene_IMG_20260528_152800_00_030_p" title="Esquina_Laboratorio_Biologia" onstart="on_intro_loaded_030();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_152800_00_030.tiles/thumb.jpg" lat="18.48797222" lng="-69.96308333" alt="2.20" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_152800_00_030.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_152800_00_030.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_152800_00_030.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot
+			name="spot7"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-84.65992335793976" 
+			atv="22.53649413722977"
+			linkedscene="scene_IMG_20260528_153130_00_033"
+			hlookat="0.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot6"
+			style="pisada"
+			url="images/pisada.png"
+			ath="178.34405351020200" 
+			atv="28.90117632179787"
+			linkedscene="scene_IMG_20260528_153023_00_032"
+			hlookat="0.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot1"
+			ath="1.0"
+			atv="7.0"
+			url="images/centrifugas.png"
+			scale="0.35"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_centrifuga();"
+		/>
+
+		<hotspot
+			name="spot2"
+			ath="101.83467658017756" 
+			atv="-5.78776065514775" 
+			url="images/incubadora.png"
+ 			scale="0.35" 
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_incubadora();"
+		/>
+
+		<hotspot
+			name="spot3"
+			ath="66.0"
+			atv="0.0"
+			url="images/horno.png"
+			scale="0.35"
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_horno();"
+		/>
+
+		<hotspot
+			name="spot4"
+			ath="36.0"
+			atv="5.0"
+			url="images/desecador.png"
+ 			scale="0.35" 
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_desecador();"
+		/>
+
+		<hotspot
+			name="spot5"
+			ath="-37.10538395279582" 
+			atv="-25.11681636881573"
+			url="images/autoclave_to.png"
+ 			scale="0.35" 
+			depth="1000"
+			rx="-32.00000000000000"
+			ry="-3.50000000000000"
+			rz="0" ox="0.00000000000000"
+			oy="0.00000000000000"
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_autoclave_to();"
+		/>
+
+		<hotspot name="newhs_1"
+			onclick="on_click_polygon_centrifuga();"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="-15.03534207787061" atv="11.882633517395268" />
+			<point ath="-12.922878032623657" atv="12.083319716019682" />
+			<point ath="1.2860482371620492" atv="14.721879741080636" />
+			<point ath="17.4310204901617" atv="14.497183129246299" />
+			<point ath="17.926836467726673" atv="8.214840084894545" />
+			<point ath="17.03363999563868" atv="1.416230401299177" />
+			<point ath="12.415557241191834" atv="0.026134165571161425" />
+			<point ath="0.8986827369756725" atv="0.296902241217742" />
+			<point ath="-7.715462056206661" atv="0.48172816295836957" />
+			<point ath="-13.900791323920373" atv="1.952527080815255" />
+			<point ath="-15.496430181357425" atv="5.727655446816578" />
+			<point ath="-15.539442711672109" atv="8.731242292603916" />
+		</hotspot>
+
+		<hotspot name="newhs_2"
+			onclick="on_click_polygon_autoclave_to();"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="-39.063746115959475" atv="-2.564852698302532" />
+			<point ath="-37.03382878460826" atv="-4.13229688204655" />
+			<point ath="-37.37317926918888" atv="-6.369290074988875" />
+			<point ath="-35.665126279694846" atv="-6.4773408626317455" />
+			<point ath="-35.162587516578355" atv="-5.21204160868884" />
+			<point ath="-35.09924431429914" atv="-4.395670754514696" />
+			<point ath="-34.74684540409527" atv="-4.228085092939352" />
+			<point ath="-34.59819140671044" atv="-6.094473206531111" />
+			<point ath="-33.579115075409504" atv="-6.478539190108762" />
+			<point ath="-30.480459349557293" atv="-6.548146345654283" />
+			<point ath="-29.48668262734759" atv="-5.485471173237211" />
+			<point ath="-29.48689821491473" atv="-4.4926758484402045" />
+			<point ath="-28.58151357606431" atv="-3.866873234955969" />
+			<point ath="-28.46643145628417" atv="-4.5744825093098" />
+			<point ath="-28.80758308662007" atv="-5.094486308061176" />
+			<point ath="-28.580051089608048" atv="-5.510424668951104" />
+			<point ath="-28.57982841689534" atv="-6.2707585565316055" />
+			<point ath="-27.779872463334186" atv="-6.528917263455968" />
+			<point ath="-27.132306049959993" atv="-5.784745735527849" />
+			<point ath="-27.03608426921039" atv="-4.842748101911452" />
+			<point ath="-27.50722959901259" atv="-3.7427990577847763" />
+			<point ath="-25.903109716942424" atv="-2.514345801797972" />
+			<point ath="-24.23164071573558" atv="-2.1369304309616557" />
+			<point ath="-24.361856506161246" atv="-1.1761215842733368" />
+			<point ath="-24.762473921072228" atv="-0.7513423178537586" />
+			<point ath="-24.586251314428182" atv="1.23290815966039" />
+			<point ath="-25.678906333270618" atv="1.9729505330289558" />
+			<point ath="-25.893259557919862" atv="10.337934499314725" />
+			<point ath="-34.82161625599042" atv="12.19923513471267" />
+			<point ath="-40.94883197277244" atv="11.368852480860681" />
+			<point ath="-41.06975661938242" atv="7.161056177336866" />
+			<point ath="-38.77810639866402" atv="6.511096320095743" />
+		</hotspot>
+
+		<hotspot name="newhs_4"
+			onclick="on_click_polygon_desecador();"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="42.47608592247002" atv="14.46802499853308" />
+			<point ath="26.497486323692385" atv="8.864821767651028" />
+			<point ath="27.34789929889189" atv="-1.1636421314009697" />
+			<point ath="44.51466905140853" atv="-0.06513865079622022" />
+			<point ath="46.758246998189975" atv="10.668710769625614" />
+			<point ath="42.82375017886369" atv="14.650869082734708" />
+		</hotspot>
+
+		<hotspot name="newhs_6"
+			onclick="on_click_polygon_horno();"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="47.76244617432644" atv="-28.14085408584409" />
+			<point ath="79.83339774627518" atv="-35.51076189714436" />
+			<point ath="84.90798597213325" atv="-23.33287852513294" />
+			<point ath="84.75713349891242" atv="10.503243428861321" />
+			<point ath="79.31073854232704" atv="16.662445241250577" />
+			<point ath="48.28908007398047" atv="11.991548931631678" />
+		</hotspot>
+
+		<hotspot name="newhs_8"
+			onclick="on_click_polygon_incubadora();"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2">
+			<point ath="90.10898787627221" atv="-18.675793884357063" />
+			<point ath="115.1972075902911" atv="-18.01273262133203" />
+			<point ath="115.75401587746117" atv="8.96686628327113" />
+			<point ath="114.470428761003" atv="9.156849636745543" />
+			<point ath="114.67845378662028" atv="15.788400411833484" />
+			<point ath="90.29894494087426" atv="16.761186689966678" />
+		</hotspot>
+
+		<hotspot
+			name="spot6" 
+			ath="-72.64995566491802" 
+			atv="-0.46516265179276"
+			url="images/p21.png"
+ 			scale="0.35" 
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_llave_gas();"
+		/>
+
+		<hotspot
+			name="spot7" 
+			ath="-72.64995566491802" 
+			atv="-0.46516265179276"
+			url="images/p22.png"
+ 			scale="0.35" 
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_llave_gas();"
+		/>
 	</scene>
 
 	<scene name="scene_IMG_20260528_153130_00_033" title="Dispositivos_Laboratorio_Biologia" onstart="on_click_loaded_hot_plate();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
@@ -954,7 +1393,7 @@
 		/>
 
 		<hotspot name="newhs_0"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -967,7 +1406,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_2"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -989,7 +1428,7 @@
 			ath="67.04552682393398" 
 			atv="-1.92884959959409"
 			url="images/balanza.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1004,7 +1443,7 @@
  			ath="123.06548820181453" 
 			atv="-2.15075831936021"
 			url="images/hot_plate.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1012,6 +1451,21 @@
 			oy="0.00000000000000"
 			tx="0" ty="0" tz="0"
 			onclick="on_click_hot_plate();"
+		/>
+
+		<hotspot
+			name="spot10" 
+			ath="-72.64995566491802" 
+			atv="-0.46516265179276"
+			url="images/p3.png"
+ 			scale="0.35" 
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_llave_gas();"
 		/>
 
 	</scene>
@@ -1057,7 +1511,7 @@
 		/>
 
 		<hotspot name="newhs_3"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -1072,7 +1526,7 @@
 		</hotspot>
 
 		<hotspot name="newhs_1"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -1092,7 +1546,7 @@
 			ath="162.52678967432121" 
 			atv="-12.11300421470238"
 			url="images/ducha.png"
-			scale="0.50000000000000"
+			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1107,7 +1561,7 @@
 			ath="-135.01055759695075" 
 			atv="-2.83207560033419"
 			url="images/materiales.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1115,6 +1569,21 @@
 			oy="0.00000000000000"
 			tx="0" ty="0" tz="0"
 			onclick="on_click_ducha();"
+		/>
+
+		<hotspot
+			name="spot11" 
+			ath="-72.64995566491802" 
+			atv="-0.46516265179276"
+			url="images/p4.png"
+ 			scale="0.35" 
+			depth="1000" 
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="on_click_loaded_llave_gas();"
 		/>
 	</scene>
 
@@ -1159,7 +1628,7 @@
 		/>
 
 		<hotspot name="newhs_1"
-			fillcolor="0x00FF00"
+			fillcolor="0x90D5FF "
 			fillalpha="0.4"
 			bordercolor="0xFFFFFF"
 			borderalpha="1.0"
@@ -1176,7 +1645,7 @@
 			ath="152.16962379905740" 
 			atv="-2.19507616482052"
 			url="images/almacenes.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1269,7 +1738,7 @@
 			ath="25.34419215644493" 
 			atv="-12.71666623114794"
 			url="images/acabo.png"
-			scale="0.50000000000000"
+			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1284,7 +1753,7 @@
 			ath="-0.54113706061275" 
 			atv="21.44697168330049"
 			url="images/teoria.png"
-			scale="0.50000000000000"
+			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"
@@ -1299,7 +1768,7 @@
  			ath="41.11125027209613" 
 			atv="22.70496435902346"
 			url="images/practica.png"
-			scale="0.50000000000000"
+ 			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
 			ry="-3.50000000000000"

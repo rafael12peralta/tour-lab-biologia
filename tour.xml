@@ -267,6 +267,8 @@
 	<action name="on_click_loaded_hot_plate">
 		set(hotspot[spot8].visible, false);
 		set(hotspot[spot9].visible, false);
+		set(hotspot[correct].visible, false);
+		set(hotspot[incorrect].visible, false);
 	</action>
 
 	<action name="on_click_polygon_hot_plate">
@@ -291,6 +293,8 @@
 	<action name="on_click_loaded_ducha">
 		set(hotspot[spot9].visible, false);
 		set(hotspot[spot10].visible, false);
+		set(hotspot[correct].visible, false);
+		set(hotspot[incorrect].visible, false);
 	</action>
 
 	<action name="on_click_polygon_ducha">
@@ -1380,7 +1384,7 @@
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="95.59767450" vlookat="6.77412575" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/IMG_20260528_153130_00_033.tiles/preview.jpg" />
 
@@ -1398,7 +1402,7 @@
 			url="images/pisada.png"
 			ath="2.18417023734617" 
 			atv="11.54342605462306"
-			linkedscene="scene_IMG_20260528_153343_00_034"
+			linkedscene="scene_IMG_20260528_153130_00_033_p"
 			hlookat="44.9961938"
 			vlookat="3.8733444"
 			fov="90"
@@ -1477,19 +1481,122 @@
 			onclick="on_click_hot_plate();"
 		/>
 
+	</scene>
+
+	<scene name="scene_IMG_20260528_153130_00_033_p" title="Dispositivos_Laboratorio_Biologia_p" onstart="on_click_loaded_hot_plate();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153130_00_033.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="95.59767450" vlookat="6.77412575" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_153130_00_033.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_153130_00_033.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_153130_00_033.tiles/vr/pano_%s.jpg" />
+		</image>
+
 		<hotspot
-			name="spot10" 
-			ath="-72.64995566491802" 
-			atv="-0.46516265179276"
+			name="spot6"
+			style="pisada"
+			url="images/pisada.png"
+			ath="2.18417023734617" 
+			atv="11.54342605462306"
+			linkedscene="scene_IMG_20260528_153343_00_034"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot7"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-177.27080379030173" 
+			atv="22.20797597255902"
+			linkedscene="scene_IMG_20260528_152800_00_030"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot name="newhs_0"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="quiz_select(newhs_0, true);">
+			<point ath="90.99934594507013" atv="9.648772919843408" />
+			<point ath="90.70960938931401" atv="14.071888229617137" />
+			<point ath="100.92077894506991" atv="13.93057270403413" />
+			<point ath="99.88956110247886" atv="9.548748929641246" />
+		</hotspot>
+
+		<hotspot name="newhs_2"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="quiz_select(newhs_2, false);">
+			<point ath="73.06436419744523" atv="8.85651657901216" />
+			<point ath="71.6205011654265" atv="12.52238496351013" />
+			<point ath="77.10769757001873" atv="12.958190230516001" />
+			<point ath="77.09455711625185" atv="14.020232260148163" />
+			<point ath="86.8971158388913" atv="14.22145245451592" />
+			<point ath="88.32890720007168" atv="10.675931891225929" />
+			<point ath="87.75996097784503" atv="5.883410351414137" />
+			<point ath="80.52625107690119" atv="5.820582663753255" />
+			<point ath="74.82044329817955" atv="6.662516600313857" />
+		</hotspot>
+
+		<hotspot
+			name="pregunta" 
+			ath="85.90148241704327" atv="-24.48920547374646"
 			url="images/p3.png"
  			scale="0.35" 
 			depth="1000" 
+			alpha="0.8"	
 			rx="-32.00000000000000" 
 			ry="-3.50000000000000" 
 			rz="0" ox="0.00000000000000" 
 			oy="0.00000000000000" 
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_llave_gas();"
+			onclick=""
+		/>
+
+		<hotspot
+			name="correct"
+			ath="85.90148241704327" atv="-24.48920547374646"
+			url="images/correct.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_153343_00_034, null, MERGE, BLEND(0.5));"
+		/>
+
+		<hotspot 
+			name="incorrect"
+			ath="85.90148241704327" atv="-24.48920547374646"
+			url="images/incorrect.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_153130_00_033_p, null, MERGE, NONE);"
 		/>
 
 	</scene>
@@ -1498,7 +1605,7 @@
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-162" vlookat="-3" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/IMG_20260528_153343_00_034.tiles/preview.jpg" />
 
@@ -1595,19 +1702,123 @@
 			onclick="on_click_ducha();"
 		/>
 
+	</scene>
+
+
+	<scene name="scene_IMG_20260528_153343_00_034_p" title="Ducha_Laboratorio_Biologia_p" onstart="on_click_loaded_ducha();" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/IMG_20260528_153343_00_034.tiles/thumb.jpg" lat="18.48813889" lng="-69.96288889" alt="5.60" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="-162" vlookat="-3" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_20260528_153343_00_034.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/IMG_20260528_153343_00_034.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048,3840" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/IMG_20260528_153343_00_034.tiles/vr/pano_%s.jpg" />
+		</image>
+
 		<hotspot
-			name="spot11" 
-			ath="-72.64995566491802" 
-			atv="-0.46516265179276"
+			name="spot7"
+			style="pisada"
+			url="images/pisada.png"
+			ath="32.23607965374941" 
+			atv="8.26080947009676"
+			linkedscene="scene_IMG_20260528_153541_00_035"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot
+			name="spot8"
+			style="pisada"
+			url="images/pisada.png"
+			ath="-78.84753921556802" 
+			atv="21.58807066752662"
+			linkedscene="scene_IMG_20260528_153130_00_033"
+			hlookat="44.9961938"
+			vlookat="3.8733444"
+			fov="90"
+		/>
+
+		<hotspot name="newhs_3"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="quiz_select(newhs_3, true);">
+			<point ath="-146.9774633396254" atv="10.520442335793062" />
+			<point ath="-137.30154202959318" atv="10.401076051726319" />
+			<point ath="-136.75132125250252" atv="9.13818861516487" />
+			<point ath="-123.62319906727171" atv="8.303888182199858" />
+			<point ath="-124.32521163652663" atv="0.39330897374039886" />
+			<point ath="-147.73189283247754" atv="0.49761489096404493" />
+		</hotspot>
+
+		<hotspot name="newhs_1"
+			fillcolor="0x90D5FF "
+			fillalpha="0.4"
+			bordercolor="0xFFFFFF"
+			borderalpha="1.0"
+			borderwidth="2"
+			onclick="quiz_select(newhs_1, false);">
+			<point ath="-178.8058671701183" atv="-35.799095128196335" />
+			<point ath="178.27957662463544" atv="-42.04678362854669" />
+			<point ath="157.56091589652374" atv="-31.932226233661773" />
+			<point ath="157.85265581728848" atv="33.73063314645277" />
+			<point ath="165.52272748800306" atv="35.32451892282784" />
+			<point ath="171.66637866396627" atv="6.0562815484551065" />
+			<point ath="167.86152159476123" atv="-28.5757891902553" />
+		</hotspot>
+
+		<hotspot
+			name="pregunta" 
+			ath="-142.25528546503097" atv="-26.04347811591337"
 			url="images/p4.png"
  			scale="0.35" 
 			depth="1000" 
+			alpha="0.8"
 			rx="-32.00000000000000" 
 			ry="-3.50000000000000" 
 			rz="0" ox="0.00000000000000" 
 			oy="0.00000000000000" 
 			tx="0" ty="0" tz="0"
-			onclick="on_click_loaded_llave_gas();"
+			onclick=""
+		/>
+
+		<hotspot
+			name="correct"
+			ath="-142.25528546503097" atv="-26.04347811591337"
+			url="images/correct.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_153541_00_035, null, MERGE, BLEND(0.5));"
+		/>
+
+		<hotspot 
+			name="incorrect"
+			ath="-142.25528546503097" atv="-26.04347811591337"
+			url="images/incorrect.png"
+ 			scale="0.35" 
+			depth="1000" 
+			alpha="0.8"
+			rx="-32.00000000000000" 
+			ry="-3.50000000000000" 
+			rz="0" ox="0.00000000000000" 
+			oy="0.00000000000000" 
+			tx="0" ty="0" tz="0"
+			onclick="loadscene(scene_IMG_20260528_153343_00_034_p, null, MERGE, NONE);"
 		/>
 	</scene>
 

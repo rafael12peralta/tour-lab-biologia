@@ -228,10 +228,77 @@
         <!-- GLB de Prueba -->
         <!-- ================================================= -->
 
-        <a-assets>
-            <a-asset-item id="mitosis-stage-3" src="mitosis_stage_3.glb"></a-asset-item>
-            <a-asset-item id="mitosis-model" src="mitosis.glb"></a-asset-item>
-        </a-assets>
+    <a-box
+        id="botonPrueba"
+        class="clickable"
+        position="0 0.7 -2.5"
+        width="2"
+        height="0.7"
+        depth="0.25"
+        color="#22C55E">
+
+        <a-text
+            value="PROBAR CONTROL"
+            align="center"
+            position="0 0 0.14"
+            width="3"
+            color="#FFFFFF">
+        </a-text>
+
+    </a-box>
+
+
+    <!-- ================================================= -->
+    <!-- BOTÓN VOLVER -->
+    <!-- ================================================= -->
+
+    <a-box
+        id="volver"
+        class="clickable"
+        position="3 0.7 -3"
+        width="1.5"
+        height="0.6"
+        depth="0.2"
+        color="#EF4444">
+
+        <a-text
+            value="VOLVER"
+            align="center"
+            position="0 0 0.12"
+            width="2.5"
+            color="#FFFFFF">
+        </a-text>
+
+    </a-box>
+
+    <!-- ================================================= -->
+    <!-- GLB de Prueba -->
+    <!-- ================================================= -->
+
+    <a-assets>
+        <a-asset-item id="mitosis-stage-3" src="mitosis_stage_3.glb"></a-asset-item>
+        <a-asset-item id="mitosis-model" src="mitosis.glb"></a-asset-item>
+    </a-assets>
+
+    <a-entity
+        gltf-model="#mitosis-stage-3"
+        position="3 1.7 -4"
+        scale="0.01 0.01 0.01"
+        mitosis-model-position>
+    </a-entity>
+
+    <a-entity
+        gltf-model="#mitosis-model"
+        position="-2 1 -2"
+        scale="0.7 0.7 0.7"
+        mitosis-model-position
+        mitosis-model-animation>
+    </a-entity>
+
+
+    <!-- ================================================= -->
+    <!-- CONTROL IZQUIERDO -->
+    <!-- ================================================= -->
 
         <a-entity
             gltf-model="#mitosis-stage-3"

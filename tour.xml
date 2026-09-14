@@ -90,8 +90,8 @@
 		set(hotspot[spot3].visible, false);
 		set(hotspot[spot4].visible, false);
 		set(hotspot[spot5].visible, false);
-		set(hotspot[correct].visible, false);
-		set(hotspot[incorrect].visible, false);
+		set(hotspot[correct2].visible, false);
+		set(hotspot[incorrect2].visible, false);
 	</action>
 
 	<!-- ESCENA CENTRIFUGA -->
@@ -211,8 +211,8 @@
 		set(hotspot[spot4].visible, false);
 		set(hotspot[spot5].visible, false);
 		set(hotspot[spot6].visible, false);
-		set(hotspot[incorrect].visible, false);
-		set(hotspot[correct].visible, false);
+		set(hotspot[incorrect2].visible, false);
+		set(hotspot[correct2].visible, false);
 	</action>
 
 	<!-- ESCENA QUÉ HACEMO -->
@@ -267,8 +267,8 @@
 	<action name="on_click_loaded_hot_plate">
 		set(hotspot[spot8].visible, false);
 		set(hotspot[spot9].visible, false);
-		set(hotspot[correct].visible, false);
-		set(hotspot[incorrect].visible, false);
+		set(hotspot[correct2].visible, false);
+		set(hotspot[incorrect2].visible, false);
 	</action>
 
 	<action name="on_click_polygon_hot_plate">
@@ -293,8 +293,8 @@
 	<action name="on_click_loaded_ducha">
 		set(hotspot[spot9].visible, false);
 		set(hotspot[spot10].visible, false);
-		set(hotspot[correct].visible, false);
-		set(hotspot[incorrect].visible, false);
+		set(hotspot[correct2].visible, false);
+		set(hotspot[incorrect2].visible, false);
 	</action>
 
 	<action name="on_click_polygon_ducha">
@@ -328,13 +328,13 @@
 		set(hotspot[spot10].visible, false);
 	</action>
 
-	<!-- ESCENA CORRECTO E INCORRECTO -->
+	<!-- ESCENA correct2O E INcorrect2O -->
 
-	<action name="on_click_correct">
+	<action name="on_click_correct2">
 		set(hotspot[spot10].visible, true);
 	</action>
 
-	<action name="on_click_incorrect">
+	<action name="on_click_incorrect2">
 		set(hotspot[spot10].visible, false);
 	</action>
 
@@ -342,21 +342,21 @@
 
 	<action name="quiz_select">
     <!-- %1 = nombre del hotspot -->
-    <!-- %2 = correcto (true/false) -->
+    <!-- %2 = correct2o (true/false) -->
     if(%2,
 
-        <!-- CORRECTO -->
+        <!-- correct2O -->
         set(hotspot[%1].fillcolor, 0x00FF00);
         set(hotspot[%1].fillalpha, 0.6);
-		set(hotspot[incorrect].visible, false);	
-		set(hotspot[correct].visible, true);
+		set(hotspot[incorrect2].visible, false);	
+		set(hotspot[correct2].visible, true);
 		set(hotspot[pregunta].visible, false)
     ,
-        <!-- INCORRECTO -->
+        <!-- INcorrect2O -->
         set(hotspot[%1].fillcolor, 0xFF0000);
         set(hotspot[%1].fillalpha, 0.6);
-		set(hotspot[correct].visible, false);
-		set(hotspot[incorrect].visible, true);
+		set(hotspot[correct2].visible, false);
+		set(hotspot[incorrect2].visible, true);
 		set(hotspot[pregunta].visible, false)
     );
 	</action>
@@ -766,10 +766,10 @@
 		/>
 
 		<hotspot
-			name="correct"
+			name="correct2"
 			onclick="loadscene(scene_IMG_20260528_153023_00_032, null, MERGE, BLEND(0.5));"
 			ath="-24.18500897928141" atv="-3.37816113487801"
-			url="images/correct.png"
+			url="images/correct2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -781,9 +781,9 @@
 		/>
 
 		<hotspot 
-			name="incorrect"
+			name="incorrect2"
 			ath="-24.18500897928141" atv="-3.37816113487801"
-			url="images/incorrect.png"
+			url="images/incorrect2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1338,9 +1338,9 @@
 		/>
 
 		<hotspot
-			name="correct"
+			name="correct2"
 			ath="-6.47509081995207" atv="-24.55838138140879"
-			url="images/correct.png"
+			url="images/correct2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1353,9 +1353,9 @@
 		/>
 
 		<hotspot 
-			name="incorrect"
+			name="incorrect2"
 			ath="-6.47509081995207" atv="-24.55838138140879"
-			url="images/incorrect.png"
+			url="images/incorrect2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1547,9 +1547,9 @@
 		/>
 
 		<hotspot
-			name="correct"
+			name="correct2"
 			ath="85.90148241704327" atv="-24.48920547374646"
-			url="images/correct.png"
+			url="images/correct2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1562,9 +1562,9 @@
 		/>
 
 		<hotspot 
-			name="incorrect"
+			name="incorrect2"
 			ath="85.90148241704327" atv="-24.48920547374646"
-			url="images/incorrect.png"
+			url="images/incorrect2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1757,9 +1757,9 @@
 		/>
 
 		<hotspot
-			name="correct"
+			name="correct2"
 			ath="-142.25528546503097" atv="-26.04347811591337"
-			url="images/correct.png"
+			url="images/correct2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1772,9 +1772,9 @@
 		/>
 
 		<hotspot 
-			name="incorrect"
+			name="incorrect2"
 			ath="-142.25528546503097" atv="-26.04347811591337"
-			url="images/incorrect.png"
+			url="images/incorrect2.png"
  			scale="0.35" 
 			depth="1000" 
 			alpha="0.8"
@@ -1938,7 +1938,7 @@
 			name="spot6"
 			ath="25.34419215644493" 
 			atv="-12.71666623114794"
-			url="images/acabo.png"
+			url="images/acabo1.png"
 			scale="0.35"
 			depth="1000"
 			rx="-32.00000000000000"
@@ -1953,7 +1953,7 @@
 			name="spot8"
 			ath="25.33668355303769" 
 			atv="8.98399670548537"
-			url="images/practica.png"
+			url="images/practica1.png"
  			scale="0.35" 
 			depth="1000"
 			rx="-32.00000000000000"
